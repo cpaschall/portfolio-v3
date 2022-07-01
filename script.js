@@ -79,23 +79,23 @@ $(".projects").on("click",
     function (event) {
         console.log(event.target.classList)
         if(event.target.classList.contains("card-front")){
-            $(".project-expand").css({"height" : "800px"})
-            $(".project-card").css({"display" : "block"})
-            $(".card-front").data().card = "hide"
-            $(".card-front").css({"display": "none"})
-            $(".card-back").data().card = "show";
-            $(".card-back").css({"display": "block"})
+            $(".project-expand").css({"height" : "1000px"})
+            $(".project-card").css({"display" : "flex"})
+            // $(".card-front").data().card = "hide"
+            // $(".card-front").css({"display": "none"})
+            // $(".card-back").data().card = "show";
+            // $(".card-back").css({"display": "block"})
         } else if(event.target.classList.contains("card-back")){
-            $(".project-expand").css({"height" : "800px"})
-            $(".project-card").css({"display" : "block"})
-            $(".card-front").data().card = "hide"
-            $(".card-front").css({"display": "none"})
-            $(".card-back").data().card = "show";
-            $(".card-back").css({"display": "block"})
+            $(".project-expand").css({"height" : "1000px"})
+            $(".project-card").css({"display" : "flex"})
+            // $(".card-front").data().card = "hide"
+            // $(".card-front").css({"display": "none"})
+            // $(".card-back").data().card = "show";
+            // $(".card-back").css({"display": "block"})
         } else if($(".project-expand").data("projects") === "hide") {
             $(".project-expand").data().projects = "show";
-            $(".project-expand").css({"height" : "800px"})
-            $(".project-card").css({"display" : "block"})
+            $(".project-expand").css({"height" : "1000px"})
+            $(".project-card").css({"display" : "flex"})
             console.log($(".project-expand").data())
         } else if($(".project-expand").data("projects") === "show") {
             $(".project-expand").data().projects = "hide";

@@ -6,6 +6,16 @@
   /* background-color: #05DFD7; */
 }
 
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+i:hover{
+  color: #05dfd7;
+}
+
 body {
   /* background-color: #161616; */
   background-color: #393e46;
@@ -65,12 +75,32 @@ label {
   margin: 0%;
 }
 
-.card-back {
-  display: none;
+.card-flip > div {
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
 }
 
 .card-front {
-  display: block;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+
+.card-flip:hover .card-front {
+  transform: rotateY(-180deg);
+}
+  
+.card-flip:hover .card-back {
+  transform: rotateY(0deg);
 }
 
 .code-quiz {
@@ -104,7 +134,10 @@ label {
   margin: 2%;
 }
 
-.fa-caret-left {
+/* .fa-github-alt:hover {
+  color: #05dfd7;
+} */
+/* .fa-caret-left {
   color: #05dfd7;
   font-size: 4em;
 }
@@ -112,7 +145,51 @@ label {
 .fa-caret-right {
   color: #fa26a0;
   font-size: 4em;
+} */
+
+/* .flip-card {
+  background-color: transparent;
+  perspective: 1000px;
 }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  /* backface-visibility: hidden;
+} */
+.fa-brands:hover {
+  color: #05dfd7;
+}
+
+.fa-brands {
+  color: #fa26a0;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+} */
 
 .intro {
   height: 1000px;
@@ -148,13 +225,21 @@ label {
 .projects {
   text-align: center;
   margin-top: 5%;
-  
+}
+
+.project-card:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .project-card {
   display: none;
+  flex-direction: row;
   margin: 2%;
   object-fit: cover;
+  opacity: 0.6;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 
 .project-examples {
@@ -172,6 +257,23 @@ label {
   margin: 1%;
   justify-content: center;
   align-items: center;
+}
+
+.project-link:hover {
+  color: #05dfd7;
+  text-decoration: none;
+}
+.project-link {
+  padding: 2%;
+  font-size: 3em;
+  /* text-decoration: none; */
+  
+  color: #fa26a0;
+  /* color: #393e46; */
+}
+
+.repo-icon:hover {
+  color: #05dfd7;
 }
 
 .right-side {
@@ -236,17 +338,30 @@ label {
   -webkit-text-fill-color: transparent;
 }
 
+#codeop {
+  background-image: url("../images/codeop.png");
+  background-size: 100% 100%;
+}
+
 #codequiz {
   /* background-image: url("../images/codequiz.gif");
   background-size: 100% 100%; */
   padding: 0;
   border: 0;
-}
-
-#codequiz-back {
   background-image: url("../images/codequiz.gif");
   background-size: 100% 100%;
+  /* height: 100%; */
+  /* width: 100%; */
+}
+
+/* #codequiz-back {
+  background-image: url("../images/codequiz.gif");
+  background-color: #393e46;
+  opacity: 0.3;
+  background-size: 100% 100%;
   display: none;
+  background-color: #393e46;
+  
 }
 
 #codequiz-front {
@@ -254,7 +369,7 @@ label {
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
-}
+} */
 
 #contact-form {
   display: none;
@@ -377,6 +492,10 @@ label {
   top: -5%;
 }
 
+#note-taker {
+  background-image: url("../images/notes.png");
+  background-size: 100% 100%;
+}
 #project-title:hover {
   text-shadow: 2px 4px 5px #393e46;
   cursor: pointer;
@@ -388,6 +507,16 @@ label {
   background: -webkit-linear-gradient( #05dfd7, #fa26a0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#pwgen {
+  background-image: url("../images/pwgen.png");
+  background-size: 100% 100%;
+}
+
+#scheduler {
+  background-image: url("../images/scheduler.png");
+  background-size: 100% 100%;
 }
 
 #title-inner {
