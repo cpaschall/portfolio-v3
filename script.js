@@ -61,40 +61,76 @@
 
 // $(".cycle-btn").on("click", cycleProjects)
 
-$(".about").hover(
+$(".about").on("click", 
     function () {
         if($(".about-row").data("about") === "hide") {
-            console.log("this is hidden")
-            // $(this).attr("data", "show")
             $(".about-row").data().about = "show";
             $(".about-row").css({"height" : "150px"})
             $(".about-summary").css({"display" : "block"})
-            // console.log($(this).data())
         } else if($(".about-row").data("about") === "show") {
-            console.log("this is displayed")
             $(".about-row").data().about = "hide";
             $(".about-row").css({"height" : "5px"})
             $(".about-summary").css({"display" : "none"})
-            // console.log($(this).data())
         }
     }
 )
 
-$(".projects").hover(
-    function () {
-        if($(".project-expand").data("projects") === "hide") {
-            console.log("this is hidden")
-            // $(this).attr("data", "show")
+$(".projects").on("click", 
+    function (event) {
+        console.log(event.target.classList)
+        if(event.target.classList.contains("card-front")){
+            $(".project-expand").css({"height" : "800px"})
+            $(".project-card").css({"display" : "block"})
+            $(".card-front").data().card = "hide"
+            $(".card-front").css({"display": "none"})
+            $(".card-back").data().card = "show";
+            $(".card-back").css({"display": "block"})
+        } else if(event.target.classList.contains("card-back")){
+            $(".project-expand").css({"height" : "800px"})
+            $(".project-card").css({"display" : "block"})
+            $(".card-front").data().card = "hide"
+            $(".card-front").css({"display": "none"})
+            $(".card-back").data().card = "show";
+            $(".card-back").css({"display": "block"})
+        } else if($(".project-expand").data("projects") === "hide") {
             $(".project-expand").data().projects = "show";
             $(".project-expand").css({"height" : "800px"})
             $(".project-card").css({"display" : "block"})
             console.log($(".project-expand").data())
         } else if($(".project-expand").data("projects") === "show") {
-            console.log("this is displayed")
             $(".project-expand").data().projects = "hide";
             $(".project-expand").css({"height" : "5px"})
             $(".project-card").css({"display" : "none"})
-            console.log($(".project-expand").data())
+        }
+    }
+)
+
+// $(".project-card").hover( 
+//     function(event) {
+//         if(event.target.classList.contains("card-front")){
+//             $(".card-front").data().card = "hide"
+//             $(".card-front").css({"display": "none"})
+//             $(".card-back").data().card = "show";
+//             $(".card-back").css({"display": "block"})
+//         }
+
+// }
+// )
+
+$(".contact").on("click", 
+    function (event) {
+        console.log(event.target.classList)
+        if(event.target.classList.contains("text-input") || event.target.id === "email-btn") {
+            $(".contact-row").css({"height" : "600px"})
+            $("#contact-form").css({"display" : "block"})
+        } else if(!(event.target.classList.contains("text-input")) && $(".contact-row").data("contact") === "hide") {
+            $(".contact-row").data().contact = "show";
+            $(".contact-row").css({"height" : "600px"})
+            $("#contact-form").css({"display" : "block"})
+        } else if(!(event.target.classList.contains("text-input")) && $(".contact-row").data("contact") === "show") {
+            $(".contact-row").data().contact = "hide";
+            $(".contact-row").css({"height" : "5px"})
+            $("#contact-form").css({"display" : "none"})
         }
     }
 )
