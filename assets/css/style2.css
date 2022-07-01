@@ -133,10 +133,11 @@ label {
   background-image: linear-gradient(90deg, #05dfd7, #fa26a0);
   color: aliceblue;
   width: 50%;
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   right: 0px;
   border-bottom-left-radius: 5px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .pw-gen {
@@ -222,6 +223,12 @@ label {
   /* border: 1px black solid */
 }
 
+#about-title:hover {
+  text-shadow: 2px 4px 5px #393e46;
+  cursor: pointer;
+  font-size: 76px;
+}
+
 #about-title {
   font-size: 72px;
   background: -webkit-linear-gradient(#05dfd7, #fa26a0);
@@ -254,6 +261,12 @@ label {
   justify-content: center;
   align-items: center;
   padding: 3%;
+}
+
+#contact-title:hover {
+  text-shadow: 2px 4px 5px #393e46;
+  cursor: pointer;
+  font-size: 76px;
 }
 
 #contact-title {
@@ -362,6 +375,12 @@ label {
   transform: rotate(80deg);
   left: 35%;
   top: -5%;
+}
+
+#project-title:hover {
+  text-shadow: 2px 4px 5px #393e46;
+  cursor: pointer;
+  font-size: 76px;
 }
 
 #project-title {
