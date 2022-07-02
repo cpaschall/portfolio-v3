@@ -23,8 +23,45 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-xl">navbar</nav>
-    <section class="container-fluid intro">
+    <nav class="navbar navbar-expand-xl">
+      <ul class="nav-links">
+        <li class="link-item">
+          <a href="#intro-top"><i class="fa-solid fa-house fa-xl"></i></a>
+        </li>
+        <li class="link-item">
+          <a href="#about-title"><i class="fa-solid fa-circle-question fa-xl"></i></a>
+        </li>
+        <li class="link-item">                
+          <a href="#project-title"><i class="fa-solid fa-code fa-xl"></i></a>
+        </li>
+        <li class="link-item">
+          <a href="#contact-title"><i class="fa-solid fa-envelope fa-xl"></i></a>
+        </li>
+      </ul>
+      <div class="menu-mobile">
+        <div class="menu-icon">
+          <i class="fa-solid fa-bars fa-2xl menu"></i>
+        </div>
+        <div class="nav-links-mobile" data-mobile="hide">
+          <ul class="mobile-links">
+            <li class="link-item">
+              <a href="#intro-top">home</a>
+            </li>
+            <li class="link-item">
+              <a href="#about-title">about</a>
+            </li>
+            <li class="link-item">                
+              <a href="#project-title">projects</a>
+            </li>
+            <li class="link-item">
+              <a href="#contact-title">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+     
+    </nav>
+    <section class="container-fluid intro" id="intro-top">
       <div class="row intro-row">
         <div class="col-lg-4 left-side">
           <div class="col-lg-8" id="left-inner"></div>
@@ -32,7 +69,9 @@
         <div class="col-lg-8 right-side">
           <div id="intro-flex">
             <div id="intro-outer">
-              <div id="intro-inner"></div>
+              <div id="intro-inner">
+                <img src="./assets/images/cal-toon4.png" alt="profile pic" id="profile-pic">
+              </div>
             </div>
           </div>
           <div id="welcome-flex">
@@ -192,7 +231,6 @@
           <form
             action="mailto:cpaschall0105@gmail.com"
             method="POST"
-            subject="Testing"
             enctype="multipart/form-data"
             id="contact-form"
           >
@@ -207,16 +245,6 @@
               />
             </p>
             <p>
-              <label for="email">email:</label>
-              <br />
-              <input
-                type="text"
-                class="text-input"
-                id="email"
-                placeholder="me@email.com"
-              />
-            </p>
-            <p>
               <label for="message">message:</label>
               <br />
               <textarea
@@ -225,7 +253,6 @@
                 id="message"
                 placeholder="please send me a question or comment!"
                 rows="4"
-                ,
                 cols=""
               ></textarea>
             </p>
@@ -236,12 +263,24 @@
         </div>
       </div>
     </section>
-    <!-- <section>
-        <div class="card-footer">
+    <footer>
+      <ul class="foot-links">
+        <li class="foot-link">
+          <a href="https://github.com/cpaschall "><i class="fa-brands fa-github-alt fa-xl"></i></a>
+        </li>
+        <li class="foot-link">
+          <a href="https://linkedin.com/in/calvin-paschall"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+        </li>
+        <li class="foot-link">
+          <a href="https://twitter.com/calpaschall/"><i class="fa-brands fa-twitter fa-xl"></i></a>
+        </li>
+        <li class="foot-link">
+          <a href="./assets/other/TechResume.pdf"><i class="fa-solid fa-file fa-xl"></i></a>
+        </li>
+          
 
-        </div>
-    </section> -->
-    <footer></footer>
+      </ul>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
