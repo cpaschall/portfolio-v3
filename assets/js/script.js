@@ -1,15 +1,23 @@
-// const mediaQuery = window.matchMedia('(min-width: 751px)')
+const mediaQueryLg = window.matchMedia('(max-width: 995px)')
+const mediaQueryMd = window.matchMedia('(max-width: 710px)')
+const mediaQuerySm = window.matchMedia('(min-width: 575px)')
 // let portCards = $(".proj-ex").children();
 
 $(".about").on("click", 
     function () {
         if($(".about-row").data("about") === "hide") {
+            // //use current screen size to change section size
+            // if(mediaQueryLg) {
+            //     $(".about-row").css({"height" : "450px"})
+            // } else if(mediaQueryMd) {
+            //     $(".about-row").css({"height" : "150px"})
+            // }
+            $(".about-row").css({"height" : "450px"})
             $(".about-row").data().about = "show";
-            $(".about-row").css({"height" : "150px"})
             $(".about-summary").css({"display" : "block"})
         } else if($(".about-row").data("about") === "show") {
-            $(".about-row").data().about = "hide";
             $(".about-row").css({"height" : "5px"})
+            $(".about-row").data().about = "hide";
             $(".about-summary").css({"display" : "none"})
         }
     }
